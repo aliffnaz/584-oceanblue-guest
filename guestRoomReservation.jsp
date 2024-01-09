@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<!DOCTYPE html>
+<html lang="zxx">
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -144,20 +151,22 @@
 
                             </thead>
                             <tbody>
+            <c:forEach var="reservation" items="${reservation}"
                                 <tr>
-                                    <td>RS001</td>
-                                    <td>770901012341</td>
-                                    <td>-</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>June 29, 2023</td>
-                                    <td>June 30, 2023</td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
                              
-                                    <td>Barcbecue Set</td>
-                                    <td>RM 210.00</td>
-                                    <td>Incomplete</td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.id}"/></td>
                                     <td class="text-center"><a href="guestViewRoomReservation.html"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
                                 </tr>
+            </c:forEach >
                                 <tr>
                                     <td>RS002</td>
                                     <td>770901012341</td>
