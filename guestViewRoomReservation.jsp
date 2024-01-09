@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -43,14 +46,14 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6">
-                    <a href="index.html" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
-                    <a href="index.html" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45"
+                    <a href="index.jsp" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
+                    <a href="index.jsp" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45"
                             alt=""></a>
                 </div>
                 <div class="col-6">
                     <nav>
                         <ul>
-                            <li><a href="guestMakeRoomReservation.html" class="btn_1 btn_scrollto">Book Now</a></li>
+                            <li><a href="guestMakeRoomReservation.jsp" class="btn_1 btn_scrollto">Book Now</a></li>
                             <li>
                                 <div class="hamburger_2 open_close_nav_panel">
                                     <div class="hamburger__box">
@@ -75,16 +78,16 @@
             <nav>
 
                 <ul class="level-1">
-                    <li><a href="index.html"><i class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
-                    <li><a href="guestProfile.html"><i class="bi bi-person-square" style="font-size: 25px;"></i>
+                    <li><a href="index.jsp"><i class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
+                    <li><a href="guestProfile.jsp"><i class="bi bi-person-square" style="font-size: 25px;"></i>
                             &nbsp;Profile</a></li>
-                    <li><a href="guestViewRoom.html"><i class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
+                    <li><a href="guestViewRoom.jsp"><i class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
                             Rooms</a></li>
-                    <li><a href="guestMakeRoomReservation.html"><i class="bi bi-plus" style="font-size: 25px;"></i>
+                    <li><a href="guestMakeRoomReservation.jsp"><i class="bi bi-plus" style="font-size: 25px;"></i>
                             &nbsp;Make Reservation</a></li>
-                    <li><a href="guestRoomReservation.html"><i class="bi bi-receipt-cutoff"
+                    <li><a href="guestRoomReservation.jsp"><i class="bi bi-receipt-cutoff"
                                 style="font-size: 25px;"></i> &nbsp;Records</a></li>
-                    <li class="mt-5"><a href="guestLogin.html" class="btn btn-danger pt-3"
+                    <li class="mt-5"><a href="guestLogin.jsp" class="btn btn-danger pt-3"
                             style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
                 </ul>
                 <div class="panel_footer">
@@ -115,7 +118,7 @@
                 <div class="col-md card card-body py-5">
                     <div class="row m-5">
                         <div class="col-2 text-center">
-                            <a href="guestRoomReservation.html">
+                            <a href="guestRoomReservation.jsp">
                                 <div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
                             </a>
                         </div>
@@ -134,11 +137,11 @@
                         <div class="col-1"></div>
                         <div class="col pt-3">
                             <span>
-                                <h6>Guest IC Number</h6>
+                                <h6>Reservation ID</h6>
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" value="770901012341" name="" id="" class="form-control" disabled>
+                            <input type="text" name="reservationID" id="reservationID" class="form-control" value="<c:out value="${reservation.reservationID}"/>" disabled>
                         </div>
                     </div>
 
@@ -146,11 +149,11 @@
                         <div class="col-1"></div>
                         <div class="col pt-3">
                             <span>
-                                <h6>Guest Name</h6>
+                                <h6>Guest IC Number</h6>
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" value="Haiqal Izzee" name="" id="" class="form-control" disabled>
+                            <input type="text" name="guestICNumber" id="guestICNumber" class="form-control" value="<c:out value="${reservation.guestICNumber}"/>" disabled>
                         </div>
                     </div>
 
@@ -163,8 +166,7 @@
                         </div>
                         <div class="col-8">
                             <div class="qty-buttons mb-3 version_2">
-                                <input type="text" name="guestQuantity" id="guestQuantity" value="3"
-                                    class="qty form-control" placeholder="Guest Quantity" disabled>
+                                <input type="text" name="guestQuantity" id="guestQuantity" class="qty form-control" value="<c:out value="${reservation.guestQuantity}"/>" disabled>
                             </div>
                         </div>
                     </div>
@@ -178,8 +180,7 @@
                         </div>
                         <div class="col-8">
                             <div class="qty-buttons mb-3 version_2">
-                                <input type="text" name="durationOfStay" id="durationOfStay" value="2"
-                                    class="qty form-control" placeholder="Nights" disabled>
+                                <input type="text" name="durationOfStay" id="durationOfStay" class="qty form-control" value="<c:out value="${reservation.durationOfStay}"/>" disabled>
                             </div>
                         </div>
                     </div>
@@ -214,8 +215,8 @@
                                 <div class="custom_select">
                                     <select class="wide" name="rooms_booking" id="rooms_booking" disabled>
                                         <option value="">Select Room</option>
-                                        <option value="Deluxe Room" selected>Deluxe Room</option>
-                                        <option value="Superior Room">Standard Room</option>
+                                        <c:out value="${reservation.roomType eq 'Deluxe Room' ? '<option value=\"Deluxe Room\" selected>Deluxe Room</option>' : '<option value=\"Deluxe Room\">Deluxe Room</option>'}" />
+                                        <c:out value="${reservation.roomType eq 'Superior Room' ? '<option value=\"Superior Room\" selected>Superior Room</option>' : '<option value=\"Superior Room\">Superior Room</option>'}" />
                                     </select>
                                 </div>
                             </div>
@@ -230,8 +231,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="qty-buttons mb-3 version_2">
-                                    <input type="text" name="totalAdult" id="totalAdult" value="2"
-                                        class="qty form-control" placeholder="Adults" disabled>
+                                    <input type="text" name="totalAdult" id="totalAdult" class="qty form-control" value="<c:out value="${reservation.totalAdults}"/>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -245,8 +245,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="mb-3 qty-buttons mb-3 version_2">
-                                    <input type="text" name="totalKids" id="totalKids" value="1"
-                                        class="qty form-control" placeholder="Childs" disabled>
+                                    <input type="text" name="totalKids" id="totalKids" class="qty form-control" value="<c:out value="${reservation.totalKids}"/>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -255,8 +254,8 @@
                             <div class="col-1"></div>
                             <div class="col pt-3">
                                 <span>
-                                    <h6>Add-on Room Service</h6>
-                                    <div class="col-9"><a class="" href="guestViewRoomService.html" target="blank">View
+                                    <h6>Add-on Service</h6>
+                                    <div class="col-9"><a class="" href="guestViewRoomService.jsp" target="blank">View
                                             Catalogue</a></div>
                                 </span>
                             </div>
@@ -265,7 +264,7 @@
                                     <select name="" id="" class="wide" disabled>
                                         <option value="">Select</option>
                                         <option value="S01- Barbecue Set" selected>S01- Barbecue Set</option>
-                                        <option value="Dapur & Gas (Set A)">S02 - Dapur & Gas (Set A) </option>
+                                        <option value="S02 - Dapur & Gas (Set A)">S02 - Dapur & Gas (Set A) </option>
                                         <option value="S03 - Dapur & Gas (Set B) " selected>S03 - Dapur & Gas (Set B) </option>
                                         <option value="S04- Toto (Set A)">S04- Toto (Set A)</option>
                                         <option value="S05 - Toto (Set B)">S05 - Toto (Set B)</option>
@@ -282,8 +281,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="qty-buttons mb-3 version_2">
-                                    <input type="text" name="totalRoom" id="totalRoom" value="1"
-                                        class="qty form-control" placeholder="Total Room" disabled>
+                                    <input type="text" name="totalRoom" id="totalRoom" class="qty form-control" value="<c:out value="${reservation.totalRoom}"/>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -297,20 +295,20 @@
                             </div>
                             <div class="col-8">
                                 <div class="qty-buttons mb-3 version_2">
-                                    <input type="text" name="" id="" value="150.00" class="form-control" disabled>
+                                    <input type="text" name="totalPayment" id="totalPayment" class="form-control" value="<c:out value="${reservation.totalPayment}"/>" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col"></div>
-                            <div class="col text-center">Generate your receipt <a href="guestGenerateReceipt.html">here</a></div>
+                            <div class="col text-center">Generate your receipt <a href="guestGenerateReceipt.jsp">here</a></div>
                             <div class="col"></div>
                         </div>
                     </div>
 
                     <div class="row m-5">
                         <div class="col text-center">
-                            <a href="guestRoomReservation.html" class="btn btn-dark btn-lg"
+                            <a href="guestRoomReservation.jsp" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Back</a>
                         </div>
                     </div>
