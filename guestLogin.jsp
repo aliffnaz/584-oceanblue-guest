@@ -138,7 +138,7 @@
 							</div>
 						</div>
 					</div>
-					<form action="GuestController" method="post">
+					<form action="../GuestController" method="post">
 						<div class="row m-3">
 							<div class="col-1"></div>
 							<div class="col pt-3">
