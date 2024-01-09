@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -43,8 +46,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6">
-                    <a href="index.html" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
-                    <a href="index.html" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45"
+                    <a href="index.jsp" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
+                    <a href="index.jsp" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45"
                             alt=""></a>
                 </div>
                 <div class="col-6">
@@ -75,16 +78,16 @@
             <nav>
 
                 <ul class="level-1">
-                    <li><a href="index.html"><i class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
-                    <li><a href="guestProfile.html"><i class="bi bi-person-square" style="font-size: 25px;"></i>
+                    <li><a href="index.jsp"><i class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
+                    <li><a href="guestProfile.jsp"><i class="bi bi-person-square" style="font-size: 25px;"></i>
                             &nbsp;Profile</a></li>
-                    <li><a href="guestViewRoom.html"><i class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
+                    <li><a href="guestViewRoom.jsp"><i class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
                             Rooms</a></li>
-                    <li><a href="guestMakeRoomReservation.html"><i class="bi bi-plus" style="font-size: 25px;"></i>
+                    <li><a href="guestMakeRoomReservation.jsp"><i class="bi bi-plus" style="font-size: 25px;"></i>
                             &nbsp;Make Reservation</a></li>
-                    <li><a href="guestRoomReservation.html"><i class="bi bi-receipt-cutoff"
+                    <li><a href="guestRoomReservation.jsp"><i class="bi bi-receipt-cutoff"
                                 style="font-size: 25px;"></i> &nbsp;Records</a></li>
-                    <li class="mt-5"><a href="guestLogin.html" class="btn btn-danger pt-3"
+                    <li class="mt-5"><a href="guestLogin.jsp" class="btn btn-danger pt-3"
                             style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
                 </ul>
                 <div class="panel_footer">
@@ -120,7 +123,8 @@
                             </div>
                         </div>
                     </div>
-
+                
+                <form action="../GuestController" method="post">
                     <div class="row m-3">
                         <div class="col-1"></div>
                         <div class="col pt-3">
@@ -251,7 +255,7 @@
                             <div class="col pt-3">
                                 <span>
                                     <h6>Add-on Room Service</h6>
-                                    <div class="col-9"><a class="" href="guestViewService.html" target="blank">View
+                                    <div class="col-9"><a class="" href="guestViewService.jsp" target="blank">View
                                             Catalogue</a></div>
                                 </span>
                             </div>
@@ -303,12 +307,12 @@
 
                     <div class="row m-5">
                         <div class="col text-center">
-                            <a href="guestRoomReservation.html" class="btn btn-dark btn-lg"
+                            <a href="guestRoomReservation.jsp" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Submit</a>
                         </div>
                     </div>
 
-
+                </form>
                 </div>
                 <div class="col">
                 </div>
