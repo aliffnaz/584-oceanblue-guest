@@ -151,7 +151,7 @@
 
                             </thead>
                             <tbody>
-            <c:forEach var="reservation" items="${reservation}"
+            <c:forEach var="reservation" items="${reservation}">
                                 <tr>
                                     <td><c:out value="${reservation.id}"/></td>
                                     <td><c:out value="${reservation.id}"/></td>
