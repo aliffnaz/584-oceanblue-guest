@@ -213,7 +213,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="custom_select">
-                                    <select class="wide" name="rooms_booking" id="rooms_booking" disabled>
+                                    <select class="wide" name="roomType" id="rooms_booking" disabled>
                                         <option value="">Select Room</option>
                                         <c:out value="${reservation.roomType eq 'Deluxe Room' ? '<option value=\"Deluxe Room\" selected>Deluxe Room</option>' : '<option value=\"Deluxe Room\">Deluxe Room</option>'}" />
                                         <c:out value="${reservation.roomType eq 'Superior Room' ? '<option value=\"Superior Room\" selected>Superior Room</option>' : '<option value=\"Superior Room\">Superior Room</option>'}" />
