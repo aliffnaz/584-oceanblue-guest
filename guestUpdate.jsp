@@ -145,7 +145,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="Karim bin Ikram">
+                            <input type="text" name="guestName" id="" class="form-control" value="<c:out value="${guest.guestName}"/>">
                         </div>
                     </div>
 
@@ -157,7 +157,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="770901012341">
+                            <input type="text" name="guestICNumber" id="" class="form-control" value="<c:out value="${guest.guestICNumber}"/>">
                         </div>
                     </div>
 
@@ -169,7 +169,8 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="Silentmode, Bangi">
+                            <input type="text" name="guestAddress" id="" class="form-control" value="<c:out value="${guest.guestAddress}"/>">
+
                         </div>
                     </div>
 
@@ -181,10 +182,10 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <select name="" id="" class="form-control form-select">
+                            <select name="guestGender" id="" class="form-control form-select">
                                 <option value="">Select</option>
-                                <option value="" Selected>Male</option>
-                                <option value="">Female</option>
+                                <option value="Male" style="font-size: 16px;" <c:if test=${guest.guestGender == "Male"} >Selected</c:if>>Male</option>
+                                <option value="Female" style="font-size: 16px;" <c:if test=${guest.guestGender == "Female"} >Selected</c:if>>Female</option>
                             </select>
                         </div>
                     </div>
@@ -197,11 +198,12 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <select name="" id="" class="form-control form-select">
+                            <select name="guestRace" id="" class="form-control form-select">
                                 <option value="">Select</option>
-                                <option value="" Selected>Melayu</option>
-                                <option value="">Cina</option>
-                                <option value="">India</option>
+                                <option value="Melayu" style="font-size: 16px;" <c:if test=${guest.guestRace == "Melayu"} >Selected</c:if>>Melayu</option>
+                                <option value="Cina" style="font-size: 16px;" <c:if test=${guest.guestRace == "Cina"} >Selected</c:if>>Cina</option>
+                                <option value="India" style="font-size: 16px;" <c:if test=${guest.guestRace == "India"} >Selected</c:if>>India</option>
+                                <option value="Other" style="font-size: 16px;" <c:if test=${guest.guestRace == "Other"} >Selected</c:if>>Other</option>
                             </select>
                         </div>
                     </div>
@@ -214,13 +216,13 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <select name="" id="" class="form-control form-select">
+                            <select name="guestReligion" id="" class="form-control form-select">
                                 <option value="">Select</option>
-                                <option value="" Selected>Islam</option>
-                                <option value="">Budha</option>
-                                <option value="">Christian</option>
+                                <option value="Islam" style="font-size: 16px;" <c:if test=${guest.guestReligion == "Islam"} >Selected</c:if>>Islam</option>
+                                <option value="Buddha" style="font-size: 16px;" <c:if test=${guest.guestReligion == "Buddha"} >Selected</c:if>>Buddha</option>
+                                <option value="Christian" style="font-size: 16px;" <c:if test=${guest.guestReligion == "Christian"} >Selected</c:if>>Christian</option>
+                                <option value="Other" style="font-size: 16px;" <c:if test=${guest.guestReligion == "Other"} >Selected</c:if>>Other</option>
                             </select>
-
                         </div>
                     </div>
 
@@ -232,7 +234,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="01234567890">
+                            <input type="text" name="guestPhoneNumber" id="" class="form-control" value="<c:out value="${guest.guestPhoneNumber}"/>">
                         </div>
                     </div>
 
@@ -244,7 +246,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="Karikram@gmail.com">
+                            <input type="text" name="guestEmail" id="" class="form-control" value="<c:out value="${guest.guestEmail}"/>">
                         </div>
                     </div>
 
@@ -257,7 +259,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="Karikram@77">
+                            <input type="text" name="" id="" class="form-control" value="<c:out value="${staff.staffEmail}"/>">
                         </div>
                     </div>
 
