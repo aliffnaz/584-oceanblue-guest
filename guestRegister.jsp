@@ -142,7 +142,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="name" id="" class="form-control">
+								<input type="text" name="guestName" id="" class="form-control">
 							</div>
 						</div>
 
@@ -154,7 +154,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="icNum" id="" class="form-control">
+								<input type="text" name="guestICNumber" id="" class="form-control">
 							</div>
 						</div>
 
@@ -166,7 +166,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="address" id="" class="form-control">
+								<input type="text" name="guestAddress" id="" class="form-control">
 							</div>
 						</div>
 
@@ -178,7 +178,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="gender" id="" class="form-control form-select">
+								<select name="guestGender" id="guestGender" class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
@@ -194,7 +194,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="race" id="" class="form-control form-select">
+								<select name="guestRace" id="guestRace" class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Melayu">Melayu</option>
 									<option value="Cina">Cina</option>
@@ -211,7 +211,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="religion" id="" class="form-control form-select">
+								<select name="guestReligion" id="guestReligion" class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Islam">Islam</option>
 									<option value="Budha">Budha</option>
@@ -229,7 +229,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="phoneNum" id="" class="form-control">
+								<input type="text" name="guestPhoneNumber" id="" class="form-control">
 							</div>
 						</div>
 
@@ -241,7 +241,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="email" id="" class="form-control">
+								<input type="text" name="guestEmail" id="" class="form-control">
 							</div>
 						</div>
 
@@ -254,8 +254,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="password" name="password" id=""
-									class="form-control">
+								<input type="password" name="guestPassword" id="guestPassword" class="form-control">
 							</div>
 						</div>
 						<input type="hidden" value="add" name="purpose">
