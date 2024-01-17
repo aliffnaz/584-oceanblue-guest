@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -49,10 +52,10 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-6">
-					<a href="index.jsp" class="logo"><img
-						src="img/logo_sticky.png" width="135" height="45" alt=""></a> <a
-						href="index.jsp" class="logo_sticky"><img
-						src="img/logo_sticky.png" width="135" height="45" alt=""></a>
+					<a href="index.jsp" class="logo"><img src="img/logo_sticky.png"
+						width="135" height="45" alt=""></a> <a href="index.jsp"
+						class="logo_sticky"><img src="img/logo_sticky.png" width="135"
+						height="45" alt=""></a>
 				</div>
 				<div class="col-6">
 					<nav>
@@ -74,6 +77,22 @@
 		<!-- /container -->
 	</header>
 	<!-- /Header -->
+
+<c:if test="${param.alert == 1}">
+
+	<div class="alert alert-danger alert-dismissible fade show"
+		role="alert">
+		<strong>Supplier was not added !</strong> The supplier was already in
+		the system
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			
+		</button>
+	</div>
+</c:if>
+
+
+
 
 
 
@@ -105,7 +124,7 @@
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
-						<div class="container py-3">Â© Ombak Biru Chalet Malaysia</div>
+						<div class="container py-3">© Ombak Biru Chalet Malaysia</div>
 					</div>
 				</div>
 				<!-- /panel_footer -->
@@ -136,7 +155,7 @@
 							</div>
 						</div>
 					</div>
-					<form action="../GuestController?action=login&user=guest" method="post">
+					<form action="../GuestController?action=guestlogin" method="post">
 						<div class="row m-3">
 							<div class="col-1"></div>
 							<div class="col pt-3">
@@ -145,7 +164,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="email" id="" class="form-control">
+								<input type="text" name="guestEmail" id="" class="form-control">
 							</div>
 						</div>
 
@@ -157,29 +176,31 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="password" name="password" id="" class="form-control">
+								<input type="password" name="guestPassword" id=""
+									class="form-control">
 							</div>
 						</div>
 						<input type="hidden" value="login" name="purpose">
-					</form>
-					<div class="row text-center">
-						<span>Don't have an account? Sign up <a
-							href="guestRegister.jsp">Here</a></span>
-					</div>
 
-					<div class="row text-center">
-						<span>Part of our team? Sign in <a href="staffLogin.jsp">Here</a></span>
-					</div>
-
-					<div class="row m-5">
-
-						<div class="col text-center">
-							<a href="index.html" class="btn btn-dark btn-lg"
-								style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Sign
-								In</a>
+						<div class="row text-center">
+							<span>Don't have an account? Sign up <a
+								href="guestRegister.jsp">Here</a></span>
 						</div>
-					</div>
+
+						<div class="row text-center">
+							<span>Part of our team? Sign in <a href="staffLogin.jsp">Here</a></span>
+						</div>
+
+						<div class="row m-5">
+
+							<div class="col text-center">
+								<button type="submit" class="btn btn-dark btn-lg"
+									style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Sign
+									In</button>
+							</div>
+						</div>
 				</div>
+				</form>
 
 
 				<div class="col"></div>
@@ -229,7 +250,7 @@
 		<!--/container-->
 		<div class="copy">
 			<div class="container">
-				Â© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
+				© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
 			</div>
 		</div>
 	</footer>

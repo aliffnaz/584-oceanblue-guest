@@ -213,10 +213,10 @@
                             </div>
                             <div class="col-8">
                                 <div class="custom_select">
-                                    <select class="wide" name="rooms_booking" id="rooms_booking" disabled>
+                                    <select class="wide" name="roomType" id="rooms_booking" disabled>
                                         <option value="">Select Room</option>
-                                        <c:out value="${reservation.roomType eq 'Deluxe Room' ? '<option value=\"Deluxe Room\" selected>Deluxe Room</option>' : '<option value=\"Deluxe Room\">Deluxe Room</option>'}" />
-                                        <c:out value="${reservation.roomType eq 'Superior Room' ? '<option value=\"Superior Room\" selected>Superior Room</option>' : '<option value=\"Superior Room\">Superior Room</option>'}" />
+                                        <option value="Deluxe" <c:if test="${reservation.roomType == 'Deluxe'}">Selected</c:if>>Deluxe Room</option>
+                                        <option value="Standard" <c:if test="${reservation.roomType == 'Standard'}">Selected</c:if>>Standard Room</option>
                                     </select>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                             <div class="col pt-3">
                                 <span>
                                     <h6>Add-on Service</h6>
-                                    <div class="col-9"><a class="" href="guestViewRoomService.jsp" target="blank">View
+                                    <div class="col-9"><a class="" href="guestViewService.jsp" target="blank">View
                                             Catalogue</a></div>
                                 </span>
                             </div>

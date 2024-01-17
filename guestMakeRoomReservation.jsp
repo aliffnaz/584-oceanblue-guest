@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 
-                <form action="../GuestController" method="post">
+                <form action="../ReservationController" method="post">
                     <div class="row m-3">
                         <div class="col-1"></div>
                         <div class="col pt-3">
@@ -133,7 +133,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control">
+                            <input type="text" name="guestICNumber" id="" class="form-control">
                         </div>
                     </div>
 
@@ -181,20 +181,10 @@
                         <div class="col-8">
                             <div class="booking_wrapper">
                                 <p id="daterangepicker-result" class="d-none"></p>
-                                <input type="hidden" id="date_booking" name="date_booking">
+                                <input type="hidden" id="date_booking" name="guestDateStartEnd">
                                 <div id="daterangepicker-embedded-container"
                                     class="embedded-daterangepicker clearfix mb-4"></div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="custom_select">
-                                            <select class="wide" name="rooms_booking" id="rooms_booking">
-                                                <option value="">Select Room</option>
-                                                <option value="Deluxe Room">Deluxe Room</option>
-                                                <option value="Superior Room">Standard Room</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -207,10 +197,10 @@
                             </div>
                             <div class="col-8">
                                 <div class="custom_select">
-                                    <select class="wide" name="rooms_booking" id="rooms_booking">
+                                    <select class="wide" name="roomType" id="rooms_booking">
                                         <option value="">Select Room</option>
-                                        <option value="Deluxe Room">Deluxe Room</option>
-                                        <option value="Superior Room">Standard Room</option>
+                                        <option value="Deluxe ">Deluxe Room</option>
+                                        <option value="Standard">Standard Room</option>
                                     </select>
                                 </div>
                             </div>
@@ -279,7 +269,7 @@
                                 <span>
                                     <h6>Total Room</h6>
                                 </span>
-                            </div>
+                            </div> 
                             <div class="col-8">
                                 <div class="qty-buttons mb-3 version_2">
                                     <input type="button" value="+" class="qtyplus" name="totalRoom">

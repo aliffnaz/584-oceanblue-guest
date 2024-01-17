@@ -133,7 +133,8 @@
 							</div>
 						</div>
 					</div>
-					<form action="../GuestController" method="post">
+					<form action="../GuestController?action=guestregister&user=guest"
+						method="post">
 						<div class="row m-3">
 							<div class="col-1"></div>
 							<div class="col pt-3">
@@ -142,7 +143,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="name" id="" class="form-control">
+								<input type="text" name="guestName" id="" class="form-control">
 							</div>
 						</div>
 
@@ -154,7 +155,8 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="icNum" id="" class="form-control">
+								<input type="text" name="guestICNumber" id=""
+									class="form-control">
 							</div>
 						</div>
 
@@ -166,7 +168,8 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="address" id="" class="form-control">
+								<input type="text" name="guestAddress" id=""
+									class="form-control">
 							</div>
 						</div>
 
@@ -178,7 +181,8 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="gender" id="" class="form-control form-select">
+								<select name="guestGender" id=""
+									class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
@@ -194,11 +198,12 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="race" id="" class="form-control form-select">
+								<select name="guestRace" id="" class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Melayu">Melayu</option>
 									<option value="Cina">Cina</option>
 									<option value="India">India</option>
+									<option value="Others">Others</option>
 								</select>
 							</div>
 						</div>
@@ -211,11 +216,13 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<select name="religion" id="" class="form-control form-select">
+								<select name="guestReligion" id=""
+									class="form-control form-select">
 									<option value="">Select</option>
 									<option value="Islam">Islam</option>
 									<option value="Budha">Budha</option>
 									<option value="Christian">Christian</option>
+									<option value="Others">Others</option>
 								</select>
 
 							</div>
@@ -229,7 +236,8 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="phoneNum" id="" class="form-control">
+								<input type="text" name="guestPhoneNumber" id=""
+									class="form-control">
 							</div>
 						</div>
 
@@ -241,7 +249,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="email" id="" class="form-control">
+								<input type="text" name="guestEmail" id="" class="form-control">
 							</div>
 						</div>
 
@@ -254,7 +262,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="password" name="password" id=""
+								<input type="password" name="guestPassword" id=""
 									class="form-control">
 							</div>
 						</div>

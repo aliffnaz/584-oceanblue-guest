@@ -251,7 +251,7 @@
 
 
                         <div class="col">
-                            <a href="guestUpdate.html" class="btn btn-dark btn-lg"
+                            <a href="GuestController?action=guestUpdate&guestICNumber=<c:out value="${guest.guestICNumber}"/>" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Edit</a>
                         </div>
                     </div>
