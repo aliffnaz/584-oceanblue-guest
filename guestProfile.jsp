@@ -144,7 +144,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestName}"/>" disabled>
+                            <input type="text" name="guestName" id="" class="form-control" value="<c:out value="${guest.guestName}"/>" disabled>
                         </div>
                     </div>
 
@@ -156,7 +156,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestICNumber}"/>" disabled>
+                            <input type="text" name="guestICNumber" id="" class="form-control" value="<c:out value="${guest.guestICNumber}"/>" disabled>
                         </div>
                     </div>
 
@@ -168,7 +168,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestAddress}"/>" disabled>
+                            <input type="text" name="guestAddress" id="" class="form-control" value="<c:out value="${guest.guestAddress}"/>" disabled>
                         </div>
                     </div>
 
@@ -180,7 +180,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestGender}"/>" disabled>
+                            <input type="text" name="guestGender" id="" class="form-control" value="<c:out value="${guest.guestGender}"/>" disabled>
                         </div>
                     </div>
 
@@ -192,7 +192,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestRace}"/>" disabled>
+                            <input type="text" name="guestRace" id="" class="form-control" value="<c:out value="${guest.guestRace}"/>" disabled>
                         </div>
                     </div>
 
@@ -204,7 +204,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestReligion}"/>" disabled>
+                            <input type="text" name="guestReligion" id="" class="form-control" value="<c:out value="${guest.guestReligion}"/>" disabled>
 
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestPhoneNumber}"/>" disabled>
+                            <input type="text" name="guestPhoneNumber" id="" class="form-control" value="<c:out value="${guest.guestPhoneNumber}"/>" disabled>
                         </div>
                     </div>
 
@@ -229,7 +229,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="" id="" class="form-control" value="<c:out value="${guest.guestEmail}"/>" disabled>
+                            <input type="text" name="guestEmail" id="" class="form-control" value="<c:out value="${guest.guestEmail}"/>" disabled>
                         </div>
                     </div>
 
@@ -241,7 +241,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="password" name="" id="" class="form-control" value="<c:out value="${guest.guestPassword}"/>" disabled>
+                            <input type="password" name="guestPassword" id="" class="form-control" value="<c:out value="${guest.guestPassword}"/>" disabled>
                         </div>
                     </div>
 
