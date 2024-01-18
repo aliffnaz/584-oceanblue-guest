@@ -131,13 +131,22 @@
 
 				<div class="col-md card card-body py-5">
 
-					<div class="row mt-3">
-						<div class="col-md-12 text-center">
-							<div class="">
-								<h1>Profile</h1>
-							</div>
-						</div>
-					</div>
+					<div class="row m-5">
+                        <div class="col-2 text-center">
+                            <a href="GuestController?action=guestProfile&guestICNumber=<c:out value="${guest.guestICNumber} "/>">
+                                <div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-8 text-center pt-3">
+                            <div class="">
+
+                                <h1>Profile</h1>
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                    </div>
 
 					<div class="row m-auto">
 						<div class="col-md-12 text-center">
@@ -146,7 +155,10 @@
 							</div>
 						</div>
 					</div>
-					<form action="GuestController?action=guestUpdated&guestICNumber=<c:out value="${guest.guestICNumber} "/>" method="post">
+
+					<form
+						action="GuestController?action=guestUpdate&guestICNumber=<c:out value="${guest.guestICNumber} "/>"
+						method="post">
 						<div class="row m-3">
 							<div class="col-1"></div>
 							<div class="col pt-3">
@@ -171,7 +183,7 @@
 							<div class="col-8">
 								<input type="text" name="guestICNumber"
 									value="<c:out value="${guest.guestICNumber} "/>"
-									class="form-control" value="770901012341">
+									class="form-control" value="770901012341" readonly>
 							</div>
 						</div>
 
@@ -313,7 +325,7 @@
 
 
 							<div class="col-6 text-center">
-								<button href="GuestController?action=guestUpdate&guestICNumber=<c:out value="${guest.guestICNumber} "/>" class="btn btn-dark btn-md"
+								<button type="submit" class="btn btn-dark btn-md"
 									style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px"
 									onclick="success()">Done</button>
 
@@ -324,8 +336,10 @@
 									}
 								</script>
 
-								<button type="submit" class="btn btn-danger btn-md"
-									style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Cancel</button>
+								<a
+									href="GuestController?action=guestProfile&guestICNumber=<c:out value="${guest.guestICNumber} "/>"
+									class="btn btn-danger btn-md"
+									style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Cancel</a>
 
 
 							</div>
