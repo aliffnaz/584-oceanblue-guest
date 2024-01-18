@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 
-                <form action="../ReservationController" method="post">
+                <form action="../ReservationController?action=guestMakeRoomReservation" method="post">
                     <div class="row m-3">
                         <div class="col-1"></div>
                         <div class="col pt-3">
@@ -133,7 +133,7 @@
                             </span>
                         </div>
                         <div class="col-8">
-                            <input type="text" name="guestICNumber" id="" class="form-control">
+                            <input type="text" name="guestICNumber" value="" class="form-control">
                         </div>
                     </div>
 
@@ -280,25 +280,13 @@
                             </div>
                         </div>
 
-                        <div class="row m-3">
-                            <div class="col-1"></div>
-                            <div class="col pt-3">
-                                <span>
-                                    <h6>Total Payment</h6>
-                                </span>
-                            </div>
-                            <div class="col-8">
-                                <div class="qty-buttons mb-3 version_2">
-                                    <input type="text" name="" id="" class="form-control">
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="row m-5">
                         <div class="col text-center">
-                            <a href="guestRoomReservation.jsp" class="btn btn-dark btn-lg"
-                                style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Submit</a>
+                            <button type="submit" class="btn btn-dark btn-lg"
+                                style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Submit</button>
                         </div>
                     </div>
 
