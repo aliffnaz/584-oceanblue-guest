@@ -151,19 +151,19 @@
 
                             </thead>
                             <tbody>
-            <c:forEach var="reservation" items="${reservation}">
+            <c:forEach var="reservation" items="${reservations}">
                                 <tr>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.reservationID}"/></td>
+                                    <td><c:out value="${reservation.guestICNumber}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
                              
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
-                                    <td><c:out value="${reservation.id}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.guestQuantity}"/></td>
                                     <td class="text-center"><a href="guestViewRoomReservation.html"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
                                 </tr>
             </c:forEach >
