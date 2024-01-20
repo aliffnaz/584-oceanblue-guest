@@ -185,12 +185,9 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 							</div>
 						</div>
 						<div class="row text-center">
-							<span>Want to create event ? <a
-								href="@{/guestMakeEventService}">Click Here</a></span>
+							<span>Reserve event service? <a
+								href="ReservationController?action=guestMakeEventService">Click Here</a></span>
 						</div>
-
-
-
 
 						<div class="row m-5">
 							<div class="col text-center">
@@ -228,18 +225,24 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 							<th class="text-center">Service Price</th>
 							<th class="text-center">Service Quantity</th>
 							<th class="text-center">Service Duration</th>
+							<th class="text-center">Action</th>
 
 						</thead>
 						<tbody>
 
 							<tr each="guest : ${services}">
+								<td class="text-center" text=""></td>
 								<td class="text-center" text="${service.serviceID}"></td>
 								<td class="text-center" text="${service.serviceName}"></td>
 								<td class="text-center" text="${service.serviceType}"></td>
 								<td class="text-center" text="${service.servicePrice}"></td>
 								<td class="text-center" text="${service.serviceQuantity}"></td>
 								<td class="text-center" text="${service.serviceDuration}"></td>
-
+								<td class="text-center">
+									<a href="">
+										<i class="bi bi-trash3-fill" style="font-size: 20px;"></i>
+									</a>
+								</td>
 							</tr>
 
 							<tr>
@@ -247,7 +250,9 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 								<td class="text-center">Azalea</td>
 								<td class="text-center">014-7138969</td>
 								<td class="text-center">020707-04-2222</td>
-
+								<td class="text-center" text=""></td>
+								<td class="text-center" text=""></td>
+								<td class="text-center" text=""></td>
 							</tr>
 
 						</tbody>
@@ -255,6 +260,9 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 				</div>
 
 				<div class="col"></div>
+					<div class="col-2 text-center">
+						<a class="btn btn-dark" href="ReservationController?action=guestRoomReservation">Confirm</a>
+					</div>
 			</div>
 
 		</div>
