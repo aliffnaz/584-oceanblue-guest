@@ -137,12 +137,10 @@
                             <thead>
                                 <th class="text-center">Reservation ID</th>
                                 <th class="text-center">Guest IC Number</th>
-                                <th class="text-center">Standard</th>
-                                <th class="text-center">Deluxe</th>
+                                <th class="text-center">Total Room</th>
                                 <th class="text-center">Duration Of Stay</th>
                                 <th class="text-center">Check-in Date</th>
                                 <th class="text-center">Check-out Date</th>
-                             
                                 <th class="text-center">Add-on Room Services</th>
                                 <th class="text-center">Total Amount</th>
                                 <th class="text-center">Status</th>
@@ -155,46 +153,18 @@
                                 <tr>
                                     <td><c:out value="${reservation.reservationID}"/></td>
                                     <td><c:out value="${reservation.guestICNumber}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
+                                    <td><c:out value="${reservation.totalRoom}"/></td>
+                                    <td><c:out value="${reservation.durationOfStay}"/></td>
+                                    <td><c:out value="${reservation.dateStart}"/></td>
+                                    <td><c:out value="${reservation.dateEnd}"/></td>
                              
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td><c:out value="${reservation.guestQuantity}"/></td>
-                                    <td class="text-center"><a href="guestViewRoomReservation.html"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
+                                    <td><c:out value="not yet"/></td>
+                                    <td><c:out value="${reservation.totalPayment}"/></td>
+                                    <td><c:out value="${reservation.reserveStatus}"/></td>
+                                    <td class="text-center"><a href="ReservationController?action=guestViewRoomReservation&reservationID=<c:out value="${reservation.reservationID}"/>"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
                                 </tr>
             </c:forEach >
-                                <tr>
-                                    <td>RS002</td>
-                                    <td>770901012341</td>
-                                    <td>-</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>July 12, 2023</td>
-                                    <td>July 14, 2023</td>
-                             
-                                    <td>Dapur & Gas (Set B) </td>
-                                    <td>RM 210.00</td>
-                                    <td>Complete</td>
-                                    <td class="text-center"><a href="guestViewRoomReservation.html"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
-                                </tr>
-                                <tr>
-                                    <td>RS003</td>
-                                    <td>770901012341</td>
-                                    <td>-</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>November 12, 2023</td>
-                                    <td>November 13, 2023</td>
-                           
-                                    <td>Toto (Set B)</td>
-                                    <td>RM 410.00</td>
-                                    <td>Complete</td>
-                                    <td class="text-center"><a href="guestViewRoomReservation.html"><div class="bi bi-eye-fill" style="font-size: 20px;"></div></a></td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>

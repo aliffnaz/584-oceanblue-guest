@@ -231,7 +231,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="qty-buttons mb-3 version_2">
-                                    <input type="text" name="totalAdult" id="totalAdult" class="qty form-control" value="<c:out value="${reservation.totalAdults}"/>" disabled>
+                                    <input type="text" name="totalAdult" id="totalAdult" class="qty form-control" value="<c:out value="${reservation.totalAdult}"/>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -299,16 +299,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col"></div>
-                            <div class="col text-center">Generate your receipt <a href="guestGenerateReceipt.jsp">here</a></div>
-                            <div class="col"></div>
-                        </div>
+                        
                     </div>
 
                     <div class="row m-5">
                         <div class="col text-center">
-                            <a href="guestRoomReservation.jsp" class="btn btn-dark btn-lg"
+                            <a href="ReservationController?action=guestRoomReservation" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Back</a>
                         </div>
                     </div>
