@@ -189,21 +189,26 @@
                         <div class="col-1"></div>
                         <div class="col pt-3">
                             <span>
-                                <h6>Check-in & Check-out Date</h6>
+                                <h6>Date Start</h6>
                             </span>
                         </div>
                         <div class="col-8">
-                            <div class="booking_wrapper">
-                                <p id="daterangepicker-result" class="d-none"></p>
-                                <input type="hidden" id="date_booking" name="date_booking">
-                                <div id="daterangepicker-embedded-container"
-                                    class="embedded-daterangepicker clearfix mb-4"></div>
-                                <div class="row">
-
-                                </div>
-                            </div>
+                            <input type="text" name="dateStart" id="dateStart" class="form-control" value="<c:out value="${reservation.dateStart}"/>" disabled>                            
                         </div>
-
+					</div>
+					
+					<div class="row m-3">
+                        <div class="col-1"></div>
+                        <div class="col pt-3">
+                            <span>
+                                <h6>Date End</h6>
+                            </span>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" name="dateEnd" id="dateEnd" class="form-control" value="<c:out value="${reservation.dateEnd}"/>" disabled>                            
+                        </div>
+					</div>
+					
                         <div class="row m-3">
                             <div class="col-1"></div>
                             <div class="col pt-3">
@@ -254,28 +259,6 @@
                             <div class="col-1"></div>
                             <div class="col pt-3">
                                 <span>
-                                    <h6>Add-on Service</h6>
-                                    <div class="col-9"><a class="" href="guestViewService.jsp" target="blank">View
-                                            Catalogue</a></div>
-                                </span>
-                            </div>
-                            <div class="col-8">
-                                <div class="custom_select">
-                                    <select name="" id="" class="wide" disabled>
-                                        <option value="">Select</option>
-                                        <option value="S01- Barbecue Set" selected>S01- Barbecue Set</option>
-                                        <option value="S02 - Dapur & Gas (Set A)">S02 - Dapur & Gas (Set A) </option>
-                                        <option value="S03 - Dapur & Gas (Set B) " selected>S03 - Dapur & Gas (Set B) </option>
-                                        <option value="S04- Toto (Set A)">S04- Toto (Set A)</option>
-                                        <option value="S05 - Toto (Set B)">S05 - Toto (Set B)</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        <div class="row m-3">
-                            <div class="col-1"></div>
-                            <div class="col pt-3">
-                                <span>
                                     <h6>Total Room</h6>
                                 </span>
                             </div>
@@ -283,6 +266,24 @@
                                 <div class="qty-buttons mb-3 version_2">
                                     <input type="text" name="totalRoom" id="totalRoom" class="qty form-control" value="<c:out value="${reservation.totalRoom}"/>" disabled>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row m-3">
+                            <div class="col-1"></div>
+                            <div class="col pt-3">
+                                <span>
+                                    <h6>Service Info</h6>
+                                </span>
+                            </div>
+                            <div class="col-8">
+                                <table class="table table-hover table-bordered">
+                                <c:forEach var="service" items="${services}">
+	                                <tr>
+	                                <td class="text-center"><c:out value="${service.serviceName}" /></td>
+	                                </tr>
+	                            </c:forEach>
+                                </table>
                             </div>
                         </div>
 
