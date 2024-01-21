@@ -104,18 +104,95 @@ if (guestICNumber != null) {
 				<ul class="level-1">
 					<li><a href="index_logout.html"><i class="bi bi-house"
 							style="font-size: 25px;"></i> &nbsp;Home</a></li>
-					<li><a href=""><i class="bi bi-person-square"
-							style="font-size: 25px;"></i> &nbsp;Profile</a></li>
+							
+							<%
+					if (login) {
+					%>
+					<li><a
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<%=guestICNumber%>"><i
+							class="bi bi-person-square" style="font-size: 25px;"></i>
+							&nbsp;Profile</a></li>
+					<%
+					} else {
+					%>
+					<li><a
+						href="guest/guestLogin.jsp"><i
+							class="bi bi-person-square" style="font-size: 25px;"></i>
+							&nbsp;Profile</a></li>
+					<%
+					}
+					%>
+					
+							<%
+					if (login) {
+					%>
 					<li><a href="guestViewRoom.html"><i
 							class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
 							Rooms</a></li>
-					<li><a href=""><i class="bi bi-plus"
-							style="font-size: 25px;"></i> &nbsp;Make Reservation</a></li>
-					<li><a href=""><i class="bi bi-receipt-cutoff"
-							style="font-size: 25px;"></i> &nbsp;Records</a></li>
-					<li class="mt-5"><a href="guestLogin.html"
-						class="btn btn-dark pt-3"
+					<%
+					} else {
+					%>
+					<li><a href="guest/guestLogin.jsp"><i
+							class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
+							Rooms</a></li>
+					<%
+					}
+					%>
+					
+						
+					
+					
+					<%
+					if (login) {
+					%>
+					<li><a href="guest/guestMakeRoomReservation.html"><i
+							class="bi bi-plus" style="font-size: 25px;"></i> &nbsp;Make
+							Reservation</a></li>
+					<%
+					} else {
+					%>
+				<li><a href="guest/guestLogin.jsp"><i
+							class="bi bi-plus" style="font-size: 25px;"></i> &nbsp;Make
+							Reservation</a></li>
+					<%
+					}
+					%>
+					
+						<%
+					if (login) {
+					%>
+					<li><a
+						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-receipt-cutoff" style="font-size: 25px;"></i>
+							&nbsp;Records</a></li>
+					<%
+					} else {
+					%>
+				<li><a
+						href="guest/guestLogin.jsp"><i
+							class="bi bi-receipt-cutoff" style="font-size: 25px;"></i>
+							&nbsp;Records</a></li>
+					<%
+					}
+					%>
+					
+					
+
+					<%
+					if (login) {
+					%>
+					<li class="mt-5"><a href="LoginController?action=logout"
+						class="btn btn-danger pt-3"
+						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
+					<%
+					} else {
+					%>
+					<li class="mt-5"><a href="guest/guestLogin.jsp"
+						class="btn btn-success pt-3"
 						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Login</a></li>
+					<%
+					}
+					%>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
