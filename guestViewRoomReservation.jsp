@@ -239,7 +239,7 @@
 						</div>
 						<div class="col-8">
 							<div class="custom_select">
-								<select class="wide" name="roomType" id="rooms_booking" disabled>
+								<select class="wide" name="roomType" id="rooms_booking" >
 									<option value="">Select Room</option>
 									<option value="Deluxe"
 										<c:if test="${reservation.roomType == 'Deluxe'}">Selected</c:if>>Deluxe
