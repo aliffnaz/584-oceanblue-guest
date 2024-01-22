@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-String guestICNumber = (String) session.getAttribute("guestICNumber");
+String guestICNumber=null;
+guestICNumber = (String) session.getAttribute("guestICNumber");
 boolean login;
 
 if (guestICNumber != null) {
