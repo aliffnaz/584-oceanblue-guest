@@ -120,7 +120,7 @@ if (guestICNumber != null) {
 			<nav>
 
 				<ul class="level-1">
-					<li><a href="index_logout.html"><i class="bi bi-house"
+					<li><a href="index.html"><i class="bi bi-house"
 							style="font-size: 25px;"></i> &nbsp;Home</a></li>
 							
 							<%
