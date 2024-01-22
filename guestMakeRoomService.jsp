@@ -3,10 +3,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-String guestICNumber = (String) session.getAttribute("guestICNumber");
+if ((String) session.getAttribute("guestICNumber") == null) {
+	response.sendRedirect("guestLogin.jsp");
+} else {
+	String guestICNumber = (String) session.getAttribute("guestICNumber");
+	boolean login;
 
-
+	if (guestICNumber != null) {
+		//response.sendRedirect("");
+		login = true;
+	} else {
+		login = false;
+	}
+}
 %>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -110,7 +121,7 @@ String guestICNumber = (String) session.getAttribute("guestICNumber");
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
-						<div class="container py-3">© Ombak Biru Chalet Malaysia</div>
+						<div class="container py-3">Â© Ombak Biru Chalet Malaysia</div>
 					</div>
 				</div>
 				<!-- /panel_footer -->
@@ -312,7 +323,7 @@ String guestICNumber = (String) session.getAttribute("guestICNumber");
 		<!--/container-->
 		<div class="copy">
 			<div class="container">
-				© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
+				Â© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
 			</div>
 		</div>
 	</footer>
