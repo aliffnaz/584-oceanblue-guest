@@ -1,4 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%
+String guestICNumber = (String)session.getAttribute("guestICNumber");
+
+%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -146,7 +153,7 @@
 								</span>
 							</div>
 							<div class="col-8">
-								<input type="text" name="guestICNumber" id=""
+								<input type="text" name="guestICNumber" value="<%= guestICNumber %>"
 									class="form-control">
 							</div>
 						</div>

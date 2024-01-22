@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+String guestICNumber = (String) session.getAttribute("guestICNumber");
+%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -108,7 +112,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
-						<div class="container py-3">Â© Ombak Biru Chalet Malaysia</div>
+						<div class="container py-3">© Ombak Biru Chalet Malaysia</div>
 					</div>
 				</div>
 				<!-- /panel_footer -->
@@ -121,78 +125,86 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<main>
 		&nbsp;<br>&nbsp;<br>&nbsp;<br>
 		<div class="container mt-5 mb-5 align-items-center">
-			<form method="post" action="ReservationController?action=guestMakeRoomService">
-					<div class="col"></div>
-					<div class="col-md card card-body py-5">
-						<div class="row m-4">
-							
-							<div class="col-md-8 text-center pt-3">
-								<div class="">
-
-									<h1>Add Service</h1>
-								</div>
-							</div>
-							<div class="col-2"></div>
-						</div>
+			\
 
 
+			<form method="post"
+				action="ReservationController?action=guestAddRoomService&guestICNumber=<%=guestICNumber%>">
+				<div class="col"></div>
+				<div class="col-md card card-body py-5">
+					<div class="row m-4">
 
-						<div class="row m-3">
-							<div class="col-1"></div>
-							<div class="col pt-3">
-								<span>
-									<h6>Service Name</h6>
-								</span>
-							</div>
-							<div class="col-8">
-								<select class="wide" name="serviceID" id="serviceID">
-									<option value="">Select Service</option>
+						<div class="col-md-8 text-center pt-3">
+							<div class="">
 
-									<option each="service : ${service}"
-										value="${service.serviceID}" text="${service.serviceName}"></option>
-
-								</select>
+								<h1>Add Service</h1>
 							</div>
 						</div>
+						<div class="col-2"></div>
+					</div>
 
-						<div class="row m-3">
-							<div class="col-1"></div>
-							<div class="col pt-3">
-								<span>
-									<h6>Quantity</h6>
-								</span>
-							</div>
-							<div class="col-8">
-								<div class="qty-buttons mb-3 version_2">
-									<input type="button" value="+" class="qtyplus"
-										name="serviceQuantity"> <input type="text"
-										name="serviceQuantity" id="serviceQuantity" value=""
-										class="qty form-control" placeholder="Adults"> <input
-										type="button" value="-" class="qtyminus"
-										name="serviceQuantity">
-								</div>
-							</div>
-						</div>
-						<div class="row m-3">
-							<div class="col-1"></div>
-							<div class="col pt-3">
-								<span>
-									<h6>Duration (days)</h6>
-								</span>
-							</div>
-							<div class="col-8">
-								<input type="number" class="form-control" name="serviceDuration" />
-							</div>
-						</div>
-						<div class="row text-center">
-							<span>Reserve event service? <a
-								href="ReservationController?action=guestMakeEventService">Click Here</a></span>
-						</div>
 
-						<div class="row m-5">
-							<div class="col text-center">
-								<button type="submit" class="btn btn-dark btn-lg">Add</button>
-								<!-- <a href="@{/staffRoomList}" class="btn btn-dark btn-lg"
+					<div class="row m-3">
+						<div class="col-1"></div>
+						<div class="col pt-3">
+							<span>
+								<h6>Service</h6>
+							</span>
+						</div>
+						<div class="col-8 custom_select">
+							<select class="wide" name="serviceID" id="serviceID">
+								<option value="">Select Service</option>
+								<c:forEach var="service" items="${services}">
+
+									<option value="<c:out value="${service.serviceID}"/>">
+										<c:out value="${service.serviceName}" />
+									</option>
+								</c:forEach>
+							</select>
+						</div>
+					</div>
+
+					<div class="row m-3">
+						<div class="col-1"></div>
+						<div class="col pt-3">
+							<span>
+								<h6>Quantity</h6>
+							</span>
+						</div>
+						<div class="col-8">
+							<div class="qty-buttons mb-3 version_2">
+								<input type="button" value="+" class="qtyplus"
+									name="serviceQuantity"> <input type="text"
+									name="serviceQuantity" id="serviceQuantity" value=""
+									class="qty form-control" placeholder="Adults"> <input
+									type="button" value="-" class="qtyminus" name="serviceQuantity">
+							</div>
+						</div>
+					</div>
+					<div class="row m-3">
+						<div class="col-1"></div>
+						<div class="col pt-3">
+							<span>
+								<h6>Duration (days)</h6>
+							</span>
+						</div>
+						<div class="col-8">
+							<input type="number" class="form-control" name="serviceDuration" />
+						</div>
+					</div>
+					<div class="row text-center">
+						<span>Reserve event service? <a
+							href="ReservationController?action=guestMakeEventService">Click
+								Here</a></span>
+					</div>
+
+					<div class="row m-5">
+						<div class="col text-center">
+							<button type="submit"
+								style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px"
+								class="btn btn-dark btn-lg">Add</button>
+
+							<!-- <a href="@{/staffRoomList}" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px" onclick="success()">Add</a>
 
                             <script>
@@ -201,11 +213,11 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
                                 }
                             </script> -->
 
-								<a href="ReservationController?action=guestRoomReservation&"
-									class="btn btn-danger btn-lg"
-									style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Cancel</a>
-							</div>
+							<a href="ReservationController?action=guestRoomReservation"
+								class="btn btn-danger btn-lg"
+								style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px">Cancel</a>
 						</div>
+					</div>
 			</form>
 			<div class="row mt-5">
 				<div class="col"></div>
@@ -218,7 +230,6 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 				<div class="row mx-2">
 					<table class="table table-hover table-bordered">
 						<thead style="vertical-align: middle;">
-							<th class="text-center">No</th>
 							<th class="text-center">Service ID</th>
 							<th class="text-center">Service Name</th>
 							<th class="text-center" width="130">Service Type</th>
@@ -229,40 +240,33 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 						</thead>
 						<tbody>
+							<c:forEach var="listService" items="${listReservationServices}">
+								<tr>
+									<td class="text-center" text=""></td>
+									<td class="text-center" text="${listService.serviceID}"></td>
+									<td class="text-center" text="${listService.serviceName}"></td>
+									<td class="text-center" text="${listService.serviceType}"></td>
+									<td class="text-center" text="${listService.servicePrice}"></td>
+									<td class="text-center" text="${listService.serviceQuantity}"></td>
+									<td class="text-center" text="${listService.serviceDuration}"></td>
+									<td class="text-center"><a
+										href="ReservationController?action=guestMakeRoomReservation&deleteID=<c:out value="${service.serviceID}" />">
+											<i class="bi bi-trash-fill" style="font-size: 20px;"></i>
+									</a></td>
+								</tr>
+							</c:forEach>
 
-							<tr each="guest : ${services}">
-								<td class="text-center" text=""></td>
-								<td class="text-center" text="${service.serviceID}"></td>
-								<td class="text-center" text="${service.serviceName}"></td>
-								<td class="text-center" text="${service.serviceType}"></td>
-								<td class="text-center" text="${service.servicePrice}"></td>
-								<td class="text-center" text="${service.serviceQuantity}"></td>
-								<td class="text-center" text="${service.serviceDuration}"></td>
-								<td class="text-center">
-									<a href="">
-										<i class="bi bi-trash3-fill" style="font-size: 20px;"></i>
-									</a>
-								</td>
-							</tr>
-
-							<tr>
-								<td class="text-center">890524054568</td>
-								<td class="text-center">Azalea</td>
-								<td class="text-center">014-7138969</td>
-								<td class="text-center">020707-04-2222</td>
-								<td class="text-center" text=""></td>
-								<td class="text-center" text=""></td>
-								<td class="text-center" text=""></td>
-							</tr>
 
 						</tbody>
 					</table>
 				</div>
 
 				<div class="col"></div>
-					<div class="col-2 text-center">
-						<a class="btn btn-dark" href="ReservationController?action=guestRoomReservation">Confirm</a>
-					</div>
+				<div class="col-2 text-center">
+					<a class="btn btn-dark"
+						style="border-radius: 3px 3px 3px 3px; height: auto; width: 150px"
+						href="ReservationController?action=guestRoomReservation">Confirm</a>
+				</div>
 			</div>
 
 		</div>
@@ -310,7 +314,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 		<!--/container-->
 		<div class="copy">
 			<div class="container">
-				Â© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
+				© Ombak Biru Chalet - by <a href="#">Ocean Blue Lemond</a>
 			</div>
 		</div>
 	</footer>
