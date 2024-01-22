@@ -110,7 +110,7 @@ if (guestICNumber != null) {
 					if (login) {
 					%>
 					<li><a
-						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<%=guestICNumber%>"><i
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-person-square" style="font-size: 25px;"></i>
 							&nbsp;Profile</a></li>
 					<%
@@ -127,7 +127,7 @@ if (guestICNumber != null) {
 							<%
 					if (login) {
 					%>
-					<li><a href="guestViewRoom.html"><i
+					<li><a href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-door-open" style="font-size: 25px;"></i> &nbsp;Our
 							Rooms</a></li>
 					<%
@@ -146,7 +146,7 @@ if (guestICNumber != null) {
 					<%
 					if (login) {
 					%>
-					<li><a href="guest/guestMakeRoomReservation.html"><i
+					<li><a href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-plus" style="font-size: 25px;"></i> &nbsp;Make
 							Reservation</a></li>
 					<%
