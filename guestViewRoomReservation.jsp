@@ -115,27 +115,18 @@ if (roomType.equalsIgnoreCase("Deluxe")) {
 			<nav>
 
 				<ul class="level-1">
-					<li class=""><a
-						href="SidebarController?action=index&user=guest&guestICNumber=<%= guestICNumber %>"><i
-							class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
-					<li class=""><a
-						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<%= guestICNumber %>"><i
-							class="bi bi-clipboard-check" style="font-size: 25px;"></i>&nbsp;
-							View Profile</a></li>
-					<li><a
-						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<%= guestICNumber %>"><i
-							class="bi bi-person-badge" style="font-size: 25px;"></i>&nbsp;
-							Our Room</a></li>
-					<li><a
-						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<%= guestICNumber %>"><i
-							class="bi bi-pencil-square" style="font-size: 25px;"></i>&nbsp;
-							Make Reservation</a></li>
-					<li><a
-						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<%= guestICNumber %>"><i
-							class="bi bi-nut" style="font-size: 25px;"></i>&nbsp; Records</a></li>
-					<li class="mt-5"><a href="LoginController?action=logout"
-						class="btn btn-danger pt-3"
-						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
+					<li class=""><a href="SidebarController?action=index&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-house" style="font-size: 25px;"></i>
+                    		        &nbsp;Home</a></li>
+                    		<li class=""><a href="SidebarController?action=guestProfile&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-clipboard-check"
+                    	            style="font-size: 25px;"></i>&nbsp; View Profile</a></li>
+                    		<li><a href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-person-badge"
+                    	            style="font-size: 25px;"></i>&nbsp; Our Room</a></li>
+                    		<li><a href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-pencil-square"
+                        	        style="font-size: 25px;"></i>&nbsp; Make Reservation</a></li>
+                    		<li><a href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-nut" style="font-size: 25px;"></i>&nbsp;
+                        		    Records</a></li>
+                    		<li class="mt-5"><a href="LoginController?action=logout" class="btn btn-danger pt-3"
+                        		    style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
