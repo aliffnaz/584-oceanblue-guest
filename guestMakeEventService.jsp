@@ -3,10 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
+String guestICNumber = null;
 if ((String) session.getAttribute("guestICNumber") == null) {
 	response.sendRedirect("guestLogin.jsp");
 } else {
-	String guestICNumber = (String) session.getAttribute("guestICNumber");
+	guestICNumber = (String) session.getAttribute("guestICNumber");
 	boolean login;
 
 	if (guestICNumber != null) {
@@ -17,7 +18,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 	}
 }
 %>
-	
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -106,18 +107,27 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 			<nav>
 
 				<ul class="level-1">
-					<li class=""><a href="SidebarController?action=index&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-house" style="font-size: 25px;"></i>
-                    		        &nbsp;Home</a></li>
-	                    		<li class=""><a href="SidebarController?action=guestProfile&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-clipboard-check"
-	                    	            style="font-size: 25px;"></i>&nbsp; View Profile</a></li>
-	                    		<li><a href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-person-badge"
-	                    	            style="font-size: 25px;"></i>&nbsp; Our Room</a></li>
-	                    		<li><a href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-pencil-square"
-	                        	        style="font-size: 25px;"></i>&nbsp; Make Reservation</a></li>
-	                    		<li><a href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-nut" style="font-size: 25px;"></i>&nbsp;
-	                        		    Records</a></li>
-	                    		<li class="mt-5"><a href="LoginController?action=logout" class="btn btn-danger pt-3"
-	                        		    style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
+					<li class=""><a
+						href="SidebarController?action=index&user=guest&guestICNumber=${guest.guestICNumber}"><i
+							class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
+					<li class=""><a
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=${guest.guestICNumber}"><i
+							class="bi bi-clipboard-check" style="font-size: 25px;"></i>&nbsp;
+							View Profile</a></li>
+					<li><a
+						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=${guest.guestICNumber}"><i
+							class="bi bi-person-badge" style="font-size: 25px;"></i>&nbsp;
+							Our Room</a></li>
+					<li><a
+						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i
+							class="bi bi-pencil-square" style="font-size: 25px;"></i>&nbsp;
+							Make Reservation</a></li>
+					<li><a
+						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i
+							class="bi bi-nut" style="font-size: 25px;"></i>&nbsp; Records</a></li>
+					<li class="mt-5"><a href="LoginController?action=logout"
+						class="btn btn-danger pt-3"
+						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
@@ -132,89 +142,86 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 	<!-- /nav_panel -->
 
 	<main>
-        &nbsp;<br>&nbsp;<br>&nbsp;<br>
-        <div class="container mt-5 mb-5 align-items-center">
-            <form 
-            method="post"
-            th:action="@{/guestMakeEventService}"
-            modelAttribute="guestMakeEventService"
-            th:object="(${guestMakeEventService})"
-            enctype="multipart/form-data">
-            <div class="row">
-                <div class="col">
-                </div>
-                <div class="col-md card card-body py-5">
-                    <div class="row m-4">
-                        <!-- <div class="col-2 text-center">
+		&nbsp;<br>&nbsp;<br>&nbsp;<br>
+		<div class="container mt-5 mb-5 align-items-center">
+			<form method="post"
+				action="ReservationController?action=guestMakeEventService&guestICNumber=<%=guestICNumber%>">
+				<div class="row">
+					<div class="col"></div>
+					<div class="col-md card card-body py-5">
+						<div class="row m-4">
+							<!-- <div class="col-2 text-center">
                             <a th:href="@{/staffRoomList}">
                                 <div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
                             </a>
                         </div> -->
-                        <div class="col-md-8 text-center pt-3">
-                            <div class="">
+							<div class="col-md-8 text-center pt-3">
+								<div class="">
 
-                                <h1>Add Event Service</h1>
-                            </div>
-                        </div>
-                        <div class="col-2">
+									<h1>Add Event Service</h1>
+								</div>
+							</div>
+							<div class="col-2"></div>
+						</div>
 
-                        </div>
-                    </div>
+						<div class="row m-3">
+							<div class="col-1"></div>
+							<div class="col pt-3">
+								<span>
+									<h6>Service Name</h6>
+								</span>
+							</div>
+							<div class="col-8 custom_select">
+								<select class="wide" name="serviceID" id="serviceID">
+									<option value="">Select Service</option>
+									<c:forEach var="service" items="${services}">
+										<option value="<c:out value="${service.serviceID}"/>">
+											<c:out value="${service.serviceName}" />
+										</option>
+									</c:forEach>
+								</select>
+							</div>
+						</div>
 
-                    <div class="row m-3">
-                        <div class="col-1"></div>
-                        <div class="col pt-3">
-                            <span>
-                                <h6>Service Name</h6>
-                            </span>
-                        </div>
-                        <div class="col-8">
-                            <select class="wide" name="serviceID" id="serviceID">
-                                <option value="">Select Service</option>
-
-                                <option th:each="service : ${service}" value="${service.serviceID}" th:text="${service.serviceName}"></option>
-                           
-                            </select>
-                        </div>
-                    </div>
-                   
-                    <div class="row m-3">
-                        <div class="col-1"></div>
-                        <div class="col pt-3">
-                            <span>
-                                <h6>Event Capacity</h6>
-                            </span>
-                        </div>
-                        <div class="col-8">
-                            <input type="number" name="EventCapacity" class="form-control"/>
-                        </div>
-                    </div>
+						<div class="row m-3">
+							<div class="col-1"></div>
+							<div class="col pt-3">
+								<span>
+									<h6>Event Capacity</h6>
+								</span>
+							</div>
+							<div class="col-8">
+								<input type="number" name="EventCapacity" class="form-control" />
+							</div>
+						</div>
 
 
-                    <div class="row m-3">
-                        <div class="col-1"></div>
-                        <div class="col pt-3">
-                            <span>
-                                <h6>Duration (days)</h6>
-                            </span>
-                        </div>
-                        <div class="col-8">
-                            <div class="qty-buttons mb-3 version_2">
-                                <input type="button" value="+" class="qtyplus" name="serviceDuration">
-                                <input type="text" name="serviceDuration" id="serviceDuration" value=""
-                                    class="qty form-control" placeholder="Adults">
-                                <input type="button" value="-" class="qtyminus" name="serviceDuration">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                   
-                    
-                    <div class="row m-5">
-                        <div class="col text-center">
-                            <button type="submit" class="btn btn-dark btn-lg">Add</button>
-                            <!-- <a th:href="@{/staffRoomList}" class="btn btn-dark btn-lg"
+						<div class="row m-3">
+							<div class="col-1"></div>
+							<div class="col pt-3">
+								<span>
+									<h6>Duration (days)</h6>
+								</span>
+							</div>
+							<div class="col-8">
+								<div class="qty-buttons mb-3 version_2">
+									<input type="button" value="+" class="qtyplus"
+										name="serviceDuration"> <input type="text"
+										name="serviceDuration" id="serviceDuration" value=""
+										class="qty form-control" placeholder="Adults"> <input
+										type="button" value="-" class="qtyminus"
+										name="serviceDuration">
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="row m-5">
+							<div class="col text-center">
+								<button type="submit" class="btn btn-dark btn-lg">Add</button>
+								<!-- <a th:href="@{/staffRoomList}" class="btn btn-dark btn-lg"
                                 style="border-radius: 3px 3px 3px 3px; height: auto; width:150px" onclick="success()">Add</a>
 
                             <script>
@@ -223,75 +230,71 @@ if ((String) session.getAttribute("guestICNumber") == null) {
                                 }
                             </script> -->
 
-                            <a th:href="@{/guestRoomReservation}" class="btn btn-danger btn-lg"
-                                style="border-radius: 3px 3px 3px 3px; height: auto; width:150px">Cancel</a>
-                        </div>
-                    </div>
-  </form>
-  <div class="row mt-5">
-    <div class="col"></div>
-    
-        <div class="row my-3 text-center">
-            <span>
-                <h1>Service List</h1>
-            </span>
-        </div>
-        <div class="row mx-2">
-            <table class="table table-hover table-bordered">
-                <thead style="vertical-align: middle;">
-                    <th class="text-center">No</th>
-                    <th class="text-center">Service ID</th>
-                    <th class="text-center">Service Name</th>
-                    <th class="text-center" width="130">Service Type</th>
-                    <th class="text-center">Service Price</th>
-                    <th class="text-center">Event Capacity</th>
-                    <th class="text-center">Event Duration</th>
-                   
-                </thead>
-                <tbody>
-                    
-                    <tr th:each="guest : ${services}">
-                        <td class="text-center" th:text="${service.serviceID}"></td>
-                        <td class="text-center" th:text="${service.serviceName}"></td>
-                        <td class="text-center" th:text="${service.serviceType}"></td>
-                        <td class="text-center" th:text="${service.servicePrice}"></td>
-                        <td class="text-center" th:text="${service.EventCapacity}"></td>
-                        <td class="text-center" th:text="${service.Duration}"></td>
-                        
-                    </tr>
-                
-                    <tr>
-                        <td class="text-center">890524054568</td>
-                        <td class="text-center">Azalea</td>
-                        <td class="text-center">014-7138969</td>
-                        <td class="text-center">020707-04-2222</td>
-                       
-                    </tr>
-                  
-                </tbody>
-            </table>
-        </div>
-   
-    <div class="col"></div>
-</div>
+							</div>
+						</div>
+			</form>
+			<div class="row mt-5">
+				<div class="col"></div>
 
-                </div>
-                <div class="col"></div>
-            </div>
-            <!-- <div class="row card card-body align-items-center"> -->
-      
+				<div class="row my-3 text-center">
+					<span>
+						<h1>Service List</h1>
+					</span>
+				</div>
+				<div class="row mx-2">
+					<table class="table table-hover table-bordered">
+						<thead style="vertical-align: middle;">
+							<th class="text-center">Service ID</th>
+							<th class="text-center">Service Name</th>
+							<th class="text-center" width="130">Service Type</th>
+							<th class="text-center">Service Price</th>
+							<th class="text-center">Event Capacity</th>
+							<th class="text-center">Event Duration</th>
 
-        
-        </div>
+						</thead>
+						<tbody>
+							<c:forEach var="listService" items="${listReservationServices}">
+								<tr>
+									<td class="text-center"><c:out
+											value="${listService.serviceID}" /></td>
+									<td class="text-center" ><c:out
+											value="${listService.serviceName}" /></td>
+									<td class="text-center" ><c:out
+											value="${listService.serviceType}" /></td>
+									<td class="text-center" ><c:out
+											value="${listService.servicePrice}" /></td>
+									<td class="text-center" ><c:out
+											value="${listService.serviceQuantity}" /></td>
+									<td class="text-center"><c:out
+											value="${listService.serviceDuration}" /></td>
+									<td class="text-center"><a
+										href="ReservationController?action=guestDeleteEventService&deleteID=<c:out value="${listService.serviceID}"/>">
+											<i class="bi bi-trash-fill" style="font-size: 20px;"></i>
+									</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 
-        <div class="container mt-5 mb-5 align-items-center">
-          
-        </div>
-        <!-- </div> -->
-        &nbsp;
+				<div class="col"></div>
+			</div>
 
-       
-    </main>
+		</div>
+		<div class="col"></div>
+		</div>
+		<!-- <div class="row card card-body align-items-center"> -->
+
+
+
+		</div>
+
+		<div class="container mt-5 mb-5 align-items-center"></div>
+		<!-- </div> -->
+		&nbsp;
+
+
+	</main>
 
 	<footer class="revealed">
 		<div class="footer_bg">
@@ -304,8 +307,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 					<h5>Contacts</h5>
 					<ul>
 						<li>Jalan Telok Gong / Pengkalan Balak, Kampung Sungai Tuang<br>78300
-							Masjid Tanah, Melaka<br>
-						<br></li>
+							Masjid Tanah, Melaka<br> <br></li>
 						<li><strong><a href="#0">dchaletombakbiru@gmail.com</a></strong></li>
 						<li><strong><a href="#0">016-2115359/012-2431337</a></strong></li>
 					</ul>

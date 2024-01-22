@@ -135,7 +135,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 	<main>
 		&nbsp;<br>&nbsp;<br>&nbsp;<br>
 		<div class="container mt-5 mb-5 align-items-center">
-			\
+			
 
 
 			<form method="post"
@@ -252,7 +252,6 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 						<tbody>
 							<c:forEach var="listService" items="${listReservationServices}">
 								<tr>
-							
 									<td class="text-center" text="${listService.serviceID}"><c:out value="${listService.serviceID}"/></td>
 									<td class="text-center" text="${listService.serviceName}"><c:out value="${listService.serviceName}"/></td>
 									<td class="text-center" text="${listService.serviceType}"><c:out value="${listService.serviceType}"/></td>
@@ -265,8 +264,6 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 									</a></td>
 								</tr>
 							</c:forEach>
-
-
 						</tbody>
 					</table>
 				</div>
