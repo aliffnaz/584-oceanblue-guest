@@ -238,15 +238,15 @@ String guestICNumber = (String) session.getAttribute("guestICNumber");
 						<tbody>
 							<c:forEach var="listService" items="${listReservationServices}">
 								<tr>
-									<td class="text-center" text=""></td>
-									<td class="text-center" text="${listService.serviceID}"></td>
-									<td class="text-center" text="${listService.serviceName}"></td>
-									<td class="text-center" text="${listService.serviceType}"></td>
-									<td class="text-center" text="${listService.servicePrice}"></td>
-									<td class="text-center" text="${listService.serviceQuantity}"></td>
-									<td class="text-center" text="${listService.serviceDuration}"></td>
+							
+									<td class="text-center" text="${listService.serviceID}"><c:out value="${listService.serviceID}"/></td>
+									<td class="text-center" text="${listService.serviceName}"><c:out value="${listService.serviceName}"/></td>
+									<td class="text-center" text="${listService.serviceType}"><c:out value="${listService.serviceType}"/></td>
+									<td class="text-center" text="${listService.servicePrice}"><c:out value="${listService.servicePrice}"/></td>
+									<td class="text-center" text="${listService.serviceQuantity}"><c:out value="${listService.serviceQuantity}"/></td>
+									<td class="text-center" text="${listService.serviceDuration}"><c:out value="${listService.serviceDuration}"/></td>
 									<td class="text-center"><a
-										href="ReservationController?action=guestMakeRoomReservation&deleteID=<c:out value="${service.serviceID}" />">
+										href="ReservationController?action=guestDeleteRoomService&deleteID=<c:out value="${service.serviceID}"/>">
 											<i class="bi bi-trash-fill" style="font-size: 20px;"></i>
 									</a></td>
 								</tr>

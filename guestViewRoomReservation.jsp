@@ -3,7 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
+
 String guestICNumber = (String) session.getAttribute("guestICNumber");
+
+System.out.println(guestICNumber);
 boolean login;
 
 if (guestICNumber != null) {
@@ -13,6 +16,12 @@ if (guestICNumber != null) {
 	login = false;
 }
 
+String roomType = (String) request.getAttribute("room");
+boolean deluxe = false;
+
+if (roomType.equalsIgnoreCase("Deluxe")) {
+	deluxe = true;
+}
 %>
 
 <!DOCTYPE html>
@@ -104,18 +113,27 @@ if (guestICNumber != null) {
 			<nav>
 
 				<ul class="level-1">
-					<li class=""><a href="SidebarController?action=index&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-house" style="font-size: 25px;"></i>
-                    		        &nbsp;Home</a></li>
-	                    		<li class=""><a href="SidebarController?action=guestProfile&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-clipboard-check"
-	                    	            style="font-size: 25px;"></i>&nbsp; View Profile</a></li>
-	                    		<li><a href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-person-badge"
-	                    	            style="font-size: 25px;"></i>&nbsp; Our Room</a></li>
-	                    		<li><a href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-pencil-square"
-	                        	        style="font-size: 25px;"></i>&nbsp; Make Reservation</a></li>
-	                    		<li><a href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i class="bi bi-nut" style="font-size: 25px;"></i>&nbsp;
-	                        		    Records</a></li>
-	                    		<li class="mt-5"><a href="LoginController?action=logout" class="btn btn-danger pt-3"
-	                        		    style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
+					<li class=""><a
+						href="SidebarController?action=index&user=guest&guestICNumber=<%= guestICNumber %>"><i
+							class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
+					<li class=""><a
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<%= guestICNumber %>"><i
+							class="bi bi-clipboard-check" style="font-size: 25px;"></i>&nbsp;
+							View Profile</a></li>
+					<li><a
+						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<%= guestICNumber %>"><i
+							class="bi bi-person-badge" style="font-size: 25px;"></i>&nbsp;
+							Our Room</a></li>
+					<li><a
+						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<%= guestICNumber %>"><i
+							class="bi bi-pencil-square" style="font-size: 25px;"></i>&nbsp;
+							Make Reservation</a></li>
+					<li><a
+						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<%= guestICNumber %>"><i
+							class="bi bi-nut" style="font-size: 25px;"></i>&nbsp; Records</a></li>
+					<li class="mt-5"><a href="LoginController?action=logout"
+						class="btn btn-danger pt-3"
+						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
@@ -139,9 +157,11 @@ if (guestICNumber != null) {
 				<div class="col-md card card-body py-5">
 					<div class="row m-5">
 						<div class="col-2 text-center">
-							<a href="guestRoomReservation.jsp">
+							<a
+								href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber<%=guestICNumber%>">
 								<div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
 							</a>
+
 						</div>
 						<div class="col-md-9 text-center pt-3">
 							<div class="">
@@ -247,17 +267,15 @@ if (guestICNumber != null) {
 								<h6>Room Type</h6>
 							</span>
 						</div>
+						<c:set var="room" value="${requestScope.roomTypes}" />
 						<div class="col-8">
 							<div class="custom_select">
-								<select class="wide" name="roomType" id="rooms_booking" >
-									<option value="">Select Room</option>
-									<option value="Deluxe"
-										<c:if test="${reservation.roomType == 'Deluxe'}">Selected</c:if>>Deluxe
-										Room</option>
-									<option value="Standard"
-										<c:if test="${reservation.roomType == 'Standard'}">Selected</c:if>>Standard
-										Room</option>
-								</select>
+
+								<input type="text" name="totalAdult" id="totalAdult"
+									class="qty form-control" value="<%=roomType%>" disabled>
+
+
+
 							</div>
 						</div>
 					</div>
@@ -382,8 +400,7 @@ if (guestICNumber != null) {
 					<h5>Contacts</h5>
 					<ul>
 						<li>Jalan Telok Gong / Pengkalan Balak, Kampung Sungai Tuang<br>78300
-							Masjid Tanah, Melaka<br>
-						<br></li>
+							Masjid Tanah, Melaka<br> <br></li>
 						<li><strong><a href="#0">dchaletombakbiru@gmail.com</a></strong></li>
 						<li><strong><a href="#0">016-2115359/012-2431337</a></strong></li>
 					</ul>

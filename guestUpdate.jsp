@@ -7,10 +7,14 @@ String guestICNumber = (String) session.getAttribute("guestICNumber");
 boolean login;
 
 if (guestICNumber != null) {
-	//response.sendRedirect("");
+	
 	login = true;
 } else {
 	login = false;
+	response.sendRedirect("guestLogin.jsp");
+	
+	// guna yang ni untuk manager dan staff (TAKE NOTE)
+	//response.sendRedirect("../guest/guestLogin.jsp");
 }
 
 %>

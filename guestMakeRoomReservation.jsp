@@ -4,6 +4,7 @@
 
 <%
 String guestICNumber = (String)session.getAttribute("guestICNumber");
+System.out.println(guestICNumber);
 
 %>
 <!DOCTYPE html>
