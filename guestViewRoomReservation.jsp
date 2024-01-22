@@ -4,17 +4,18 @@
 
 <%
 
-String guestICNumber = (String) session.getAttribute("guestICNumber");
-
-System.out.println(guestICNumber);
-boolean login;
-
-if (guestICNumber != null) {
-	//response.sendRedirect("");
-	login = true;
-} else {
-	login = false;
+if ((String) session.getAttribute("guestICNumber") == null) {
 	response.sendRedirect("guestLogin.jsp");
+} else {
+	String guestICNumber = (String) session.getAttribute("guestICNumber");
+	boolean login;
+
+	if (guestICNumber != null) {
+		//response.sendRedirect("");
+		login = true;
+	} else {
+		login = false;
+	}
 }
 
 String roomType = (String) request.getAttribute("room");
