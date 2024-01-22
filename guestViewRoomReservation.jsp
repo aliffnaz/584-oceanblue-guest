@@ -14,6 +14,7 @@ if (guestICNumber != null) {
 	login = true;
 } else {
 	login = false;
+	response.sendRedirect("guestLogin.jsp");
 }
 
 String roomType = (String) request.getAttribute("room");

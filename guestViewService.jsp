@@ -11,6 +11,7 @@ if (guestICNumber != null) {
 	login = true;
 } else {
 	login = false;
+	response.sendRedirect("guestLogin.jsp");
 }
 
 %>
