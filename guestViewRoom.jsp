@@ -4,11 +4,12 @@
 
 <%
 String guestICNumber=null;
+boolean login=false;
 if ((String) session.getAttribute("guestICNumber") == null) {
 	response.sendRedirect("guestLogin.jsp");
 } else {
 	guestICNumber = (String) session.getAttribute("guestICNumber");
-	boolean login;
+
 
 	if (guestICNumber != null) {
 		//response.sendRedirect("");

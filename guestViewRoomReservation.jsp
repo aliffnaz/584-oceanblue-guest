@@ -336,10 +336,14 @@ if (roomType.equalsIgnoreCase("Deluxe")) {
 									<th>Price</th>
 								</thead>
 								<tbody>
-									<c:forEach var="service" items="${services}">
+									<c:forEach var="service" items="${reservationServices}">
 										<tr>
-											<td class="text-center"><c:out
+											<td><c:out
 													value="${service.serviceName}" /></td>
+													<td class=""><c:out
+													value="${service.serviceQuantity}" /></td>
+													<td class=""><c:out
+													value="${service.servicePrice}" /></td>
 										</tr>
 									</c:forEach>
 								</tbody>

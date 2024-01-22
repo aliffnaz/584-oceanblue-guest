@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-String guestICNumber=null;
+String guestICNumber = null;
 if ((String) session.getAttribute("guestICNumber") == null) {
 	response.sendRedirect("guestLogin.jsp");
 } else {
@@ -17,9 +17,10 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 		login = false;
 	}
 }
+// guna yang ni untuk manager dan staff (TAKE NOTE)
+//response.sendRedirect("../guest/guestLogin.jsp");
 %>
-	// guna yang ni untuk manager dan staff (TAKE NOTE)
-	//response.sendRedirect("../guest/guestLogin.jsp");
+
 
 
 <!DOCTYPE html>
@@ -115,18 +116,27 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 			<nav>
 
 				<ul class="level-1">
-					<li class=""><a href="SidebarController?action=index&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-house" style="font-size: 25px;"></i>
-                    		        &nbsp;Home</a></li>
-	                    		<li class=""><a href="SidebarController?action=guestProfile&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-clipboard-check"
-	                    	            style="font-size: 25px;"></i>&nbsp; View Profile</a></li>
-	                    		<li><a href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-person-badge"
-	                    	            style="font-size: 25px;"></i>&nbsp; Our Room</a></li>
-	                    		<li><a href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-pencil-square"
-	                        	        style="font-size: 25px;"></i>&nbsp; Make Reservation</a></li>
-	                    		<li><a href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i class="bi bi-nut" style="font-size: 25px;"></i>&nbsp;
-	                        		    Records</a></li>
-	                    		<li class="mt-5"><a href="LoginController?action=logout" class="btn btn-danger pt-3"
-	                        		    style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
+					<li class=""><a
+						href="SidebarController?action=index&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
+					<li class=""><a
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-clipboard-check" style="font-size: 25px;"></i>&nbsp;
+							View Profile</a></li>
+					<li><a
+						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-person-badge" style="font-size: 25px;"></i>&nbsp;
+							Our Room</a></li>
+					<li><a
+						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-pencil-square" style="font-size: 25px;"></i>&nbsp;
+							Make Reservation</a></li>
+					<li><a
+						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
+							class="bi bi-nut" style="font-size: 25px;"></i>&nbsp; Records</a></li>
+					<li class="mt-5"><a href="LoginController?action=logout"
+						class="btn btn-danger pt-3"
+						style="color: white; border-radius: 10px 10px 10px 10px; height: 50px;">Logout</a></li>
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
@@ -165,12 +175,10 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 					<table class="table table-hover table-bordered">
 						<thead>
 							<th class="text-center">Reservation ID</th>
-							<th class="text-center">Guest IC Number</th>
 							<th class="text-center">Total Room</th>
 							<th class="text-center">Duration Of Stay</th>
 							<th class="text-center">Check-in Date</th>
 							<th class="text-center">Check-out Date</th>
-							<th class="text-center">Add-on Room Services</th>
 							<th class="text-center">Total Amount</th>
 							<th class="text-center">Status</th>
 							<th class="text-center">Action</th>
@@ -181,13 +189,11 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 							<c:forEach var="reservation" items="${reservations}">
 								<tr>
 									<td><c:out value="${reservation.reservationID}" /></td>
-									<td><c:out value="${reservation.guestICNumber}" /></td>
 									<td><c:out value="${reservation.totalRoom}" /></td>
 									<td><c:out value="${reservation.durationOfStay}" /></td>
 									<td><c:out value="${reservation.dateStart}" /></td>
 									<td><c:out value="${reservation.dateEnd}" /></td>
 
-									<td><c:out value="not yet" /></td>
 									<td><c:out value="${reservation.totalPayment}" /></td>
 									<td><c:out value="${reservation.reserveStatus}" /></td>
 									<td class="text-center"><a
@@ -218,8 +224,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 					<h5>Contacts</h5>
 					<ul>
 						<li>Jalan Telok Gong / Pengkalan Balak, Kampung Sungai Tuang<br>78300
-							Masjid Tanah, Melaka<br>
-						<br></li>
+							Masjid Tanah, Melaka<br> <br></li>
 						<li><strong><a href="#0">dchaletombakbiru@gmail.com</a></strong></li>
 						<li><strong><a href="#0">016-2115359/012-2431337</a></strong></li>
 					</ul>

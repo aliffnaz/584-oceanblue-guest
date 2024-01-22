@@ -259,7 +259,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 									<td class="text-center" text="${listService.serviceQuantity}"><c:out value="${listService.serviceQuantity}"/></td>
 									<td class="text-center" text="${listService.serviceDuration}"><c:out value="${listService.serviceDuration}"/></td>
 									<td class="text-center"><a
-										href="ReservationController?action=guestDeleteRoomService&deleteID=<c:out value="${listService.serviceID}"/>">
+										href="ReservationController?action=guestDeleteRoomService&deleteID=<c:out value="${listService.ID}"/>">
 											<i class="bi bi-trash-fill" style="font-size: 20px;"></i>
 									</a></td>
 								</tr>

@@ -278,7 +278,7 @@ if (guestICNumber != null) {
 						</div>
 
 						<div class="row text-center">
-							<span>Part of our team? Sign in <a href="../staff/staffLogin.html">Here</a></span>
+							<span>Part of our team? Sign in <a href="../staff/staffLogin.jsp">Here</a></span>
 						</div>
 
 						<div class="row m-5">

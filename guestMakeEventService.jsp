@@ -145,7 +145,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 		&nbsp;<br>&nbsp;<br>&nbsp;<br>
 		<div class="container mt-5 mb-5 align-items-center">
 			<form method="post"
-				action="ReservationController?action=guestMakeEventService&guestICNumber=<%=guestICNumber%>">
+				action="ReservationController?action=guestAddEventService&guestICNumber=<%=guestICNumber%>">
 				<div class="row">
 					<div class="col"></div>
 					<div class="col-md card card-body py-5">
@@ -168,7 +168,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 							<div class="col-1"></div>
 							<div class="col pt-3">
 								<span>
-									<h6>Service Name</h6>
+									<h6>Service</h6>
 								</span>
 							</div>
 							<div class="col-8 custom_select">
