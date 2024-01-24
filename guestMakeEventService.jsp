@@ -2,22 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-String guestICNumber = null;
-if ((String) session.getAttribute("guestICNumber") == null) {
-	response.sendRedirect("guestLogin.jsp");
-} else {
-	guestICNumber = (String) session.getAttribute("guestICNumber");
-	boolean login;
 
-	if (guestICNumber != null) {
-		//response.sendRedirect("");
-		login = true;
-	} else {
-		login = false;
-	}
-}
-%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -108,22 +93,22 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 
 				<ul class="level-1">
 					<li class=""><a
-						href="SidebarController?action=index&user=guest&guestICNumber=${guest.guestICNumber}"><i
+						href="SidebarController?action=index&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-house" style="font-size: 25px;"></i> &nbsp;Home</a></li>
 					<li class=""><a
-						href="SidebarController?action=guestProfile&user=guest&guestICNumber=${guest.guestICNumber}"><i
+						href="SidebarController?action=guestProfile&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-clipboard-check" style="font-size: 25px;"></i>&nbsp;
 							View Profile</a></li>
 					<li><a
-						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=${guest.guestICNumber}"><i
+						href="SidebarController?action=guestViewRoom&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-person-badge" style="font-size: 25px;"></i>&nbsp;
 							Our Room</a></li>
 					<li><a
-						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i
+						href="SidebarController?action=guestMakeRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-pencil-square" style="font-size: 25px;"></i>&nbsp;
 							Make Reservation</a></li>
 					<li><a
-						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=${guest.guestICNumber}"><i
+						href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>"><i
 							class="bi bi-nut" style="font-size: 25px;"></i>&nbsp; Records</a></li>
 					<li class="mt-5"><a href="LoginController?action=logout"
 						class="btn btn-danger pt-3"
@@ -145,7 +130,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 		&nbsp;<br>&nbsp;<br>&nbsp;<br>
 		<div class="container mt-5 mb-5 align-items-center">
 			<form method="post"
-				action="ReservationController?action=guestAddEventService&guestICNumber=<%=guestICNumber%>">
+				action="ReservationController?action=guestAddEventService&guestICNumber=<c:out value="${session.guestICNumber}"/>">
 				<div class="row">
 					<div class="col"></div>
 					<div class="col-md card card-body py-5">
@@ -257,13 +242,13 @@ if ((String) session.getAttribute("guestICNumber") == null) {
 								<tr>
 									<td class="text-center"><c:out
 											value="${listService.serviceID}" /></td>
-									<td class="text-center" ><c:out
+									<td class="text-center"><c:out
 											value="${listService.serviceName}" /></td>
-									<td class="text-center" ><c:out
+									<td class="text-center"><c:out
 											value="${listService.serviceType}" /></td>
-									<td class="text-center" ><c:out
+									<td class="text-center"><c:out
 											value="${listService.servicePrice}" /></td>
-									<td class="text-center" ><c:out
+									<td class="text-center"><c:out
 											value="${listService.serviceQuantity}" /></td>
 									<td class="text-center"><c:out
 											value="${listService.serviceDuration}" /></td>

@@ -3,26 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-String guestICNumber=null;
-boolean login=false;
-if ((String) session.getAttribute("guestICNumber") == null) {
-	response.sendRedirect("guestLogin.jsp");
-} else {
-	guestICNumber = (String) session.getAttribute("guestICNumber");
-
-
-	if (guestICNumber != null) {
-		//response.sendRedirect("");
-		login = true;
-	} else {
-		login = false;
-	}
+boolean login = false;
+String sessionLogin = (String) session.getAttribute("guestICNumber");
+if(sessionLogin!=null){
+	login = true;
 }
-%>
-	
-	// guna yang ni untuk manager dan staff (TAKE NOTE)
-	//response.sendRedirect("../guest/guestLogin.jsp");
 
+%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -190,7 +177,7 @@ if ((String) session.getAttribute("guestICNumber") == null) {
                 <div class="panel_footer">
                     <div class="copy">
                         <div class="container py-3">
-                            Â© Ombak Biru Chalet Malaysia
+                            © Ombak Biru Chalet Malaysia
                         </div>
                     </div>
                 </div>

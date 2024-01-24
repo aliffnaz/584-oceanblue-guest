@@ -245,7 +245,7 @@ if (guestICNumber != null) {
 							</div>
 						</div>
 					</div>
-					<form action="../GuestController?action=guestlogin" method="post">
+					<form action="../LoginController?action=guestlogin" method="post">
 						<div class="row m-3">
 							<div class="col-1"></div>
 							<div class="col pt-3">

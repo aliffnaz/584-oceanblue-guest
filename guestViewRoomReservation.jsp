@@ -2,29 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-String guestICNumber=null;
-if ((String) session.getAttribute("guestICNumber") == null) {
-	response.sendRedirect("guestLogin.jsp");
-} else {
-	 guestICNumber = (String) session.getAttribute("guestICNumber");
-	boolean login;
 
-	if (guestICNumber != null) {
-		//response.sendRedirect("");
-		login = true;
-	} else {
-		login = false;
-	}
-}
-
-String roomType = (String) request.getAttribute("room");
-boolean deluxe = false;
-
-if (roomType.equalsIgnoreCase("Deluxe")) {
-	deluxe = true;
-}
-%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -130,7 +108,6 @@ if (roomType.equalsIgnoreCase("Deluxe")) {
 				</ul>
 				<div class="panel_footer">
 					<div class="copy">
-						<div class="container py-3">© Ombak Biru Chalet Malaysia</div>
 					</div>
 				</div>
 				<!-- /panel_footer -->
@@ -151,7 +128,7 @@ if (roomType.equalsIgnoreCase("Deluxe")) {
 					<div class="row m-5">
 						<div class="col-2 text-center">
 							<a
-								href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber<%=guestICNumber%>">
+								href="SidebarController?action=guestRoomReservation&user=guest&guestICNumber=<c:out value="${guest.guestICNumber}"/>">
 								<div class="bi bi-arrow-left-circle" style="font-size: 50px;"></div>
 							</a>
 
@@ -265,7 +242,7 @@ if (roomType.equalsIgnoreCase("Deluxe")) {
 							<div class="custom_select">
 
 								<input type="text" name="totalAdult" id="totalAdult"
-									class="qty form-control" value="<%=roomType%>" disabled>
+									class="qty form-control" value="roomType" disabled>
 
 
 
